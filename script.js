@@ -34,6 +34,6 @@ database.once('value', function (snapshot) {
 
 function displayItems (items) {
   for (var i = 0; i < items.length; i++) {
-    $('.participants tr:last').after('<tr><td>' + items[i].name + '</td><td>' + items[i].points + '</td><td>' + items[i].keysFound.sort().toString().replace(',', '<br />') + '</td></tr>')
+    $('.participants tr:last').after('<tr><td>' + items[i].name + '</td><td>' + items[i].points + '</td><td>' + items[i].keysFound.sort().toString().replace(/,/g, '<br />') + '</td></tr>')
   }
 }
